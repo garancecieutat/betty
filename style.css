@@ -1,0 +1,351 @@
+@font-face {
+  font-family: 'tangerine';
+  src: url('fonts/Tangerine_Regular.ttf') format('opentype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'poppins';
+  src: url('fonts/Poppins-Black.ttf') format('opentype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #111; /* Fond sombre entourant le site si besoin */
+}
+
+.en-tete {
+  width: 100%;
+  background-color: #fcf8e8; /* Fond beige clair */
+  border-bottom: 12px solid #32620e; /* Bande verte en dessous */
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px 10px 0px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.bloc-logo-titre {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo-image {
+  background-color: #ffffff;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  border-color: #cca300;
+  border-style: dotted;
+}
+
+.logo-image img {
+  height: 90px;
+  width: auto;
+}
+
+.texte-titre {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.typo h1 {
+  font-family: 'tangerine', cursive, sans-serif;
+  font-size: 3.2rem;
+  color: #367300; /* Vert écriture */
+  font-weight: normal;
+  line-height: 1;
+}
+
+.texte-titre p {
+  font-size: 1.1rem;
+  color: #367300;
+  margin-top: 5px;
+}
+
+.liste-menu {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+  align-items: center;
+}
+
+.bouton-nav {
+  display: inline-block;
+  background-color: #cca300; 
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 12px 24px;
+  border-radius: 30px; 
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+
+.bouton-nav:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   DEBUT DE LA SECTION BANNIERE 
+   ========================================= */
+
+.banner {
+    position: relative;
+    width: 100%;
+    /* Ratio pour garder la proportion allongée */
+    aspect-ratio: 2.8 / 1;
+    background-color: #32620e; /* Vert de l'image originale */
+    overflow: hidden;
+    display: flex;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Partie Gauche : Container de l'image */
+.banner-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%; /* Ajusté pour laisser la place à la courbe */
+    height: 100%;
+    z-index: 1;
+}
+
+/* L'image elle-même, ajustée pour ne pas déborder */
+.banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+}
+
+/* Masque Courbe (Transition) */
+.banner-curve {
+    position: absolute;
+    top: 0;
+    left: 47%; /* Positionnement de la transition */
+    width: 25%;
+    height: 100%;
+    z-index: 2;
+    /* Création d'une courbe de séparation naturelle */
+    background: #32620e;
+    clip-path: ellipse(90% 110% at 100% 10%);
+}
+
+/* Partie Droite : Contenu texte */
+.banner-content {
+    position: relative;
+    z-index: 3;
+    margin-left: auto;
+    width: 42%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 3rem 2rem 1rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Prénom & Nom (Police Tangerine) */
+.title-name {
+    font-family: 'tangerine', cursive, sans-serif;
+    font-size: clamp(3.5rem, 6vw, 5.5rem); /* Agrandie car Tangerine taille petit */
+    font-weight: normal;
+    margin-bottom: 0px;
+    color: #ffffff;
+    line-height: 1;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Métier (Police Tangerine) */
+.title-job {
+    font-family: 'tangerine', cursive, sans-serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem); /* Agrandie pour rester lisible */
+    font-weight: normal;
+    margin-bottom: 2rem;
+    line-height: 1;
+}
+
+/* Départements / Localisation (Police Poppins) */
+.locations {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(0.7rem, 1.3vw, 1.1rem);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.95;
+}
+
+/* =========================================
+   SECTION POURQUOI CONSULTER 
+   ========================================= */
+
+.section-pourquoi {
+    background-color: #fdfaf1; /* Fond crème très clair reprenant celui de l'image */
+    padding: 5rem 3rem; /* Espace en haut/bas et sur les côtés */
+    display: flex;
+    justify-content: center;
+}
+
+.container-pourquoi {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 2rem; /* Espace entre l'image et le texte */
+}
+
+/* Partie Gauche : Image */
+.image-pourquoi {
+    flex: 0 0 33%; /* L'image prend environ un tiers de l'espace */
+}
+
+.image-pourquoi img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px; /* Bords arrondis comme sur votre maquette */
+    display: block;
+    object-fit: cover;
+}
+
+/* Partie Droite : Texte */
+.texte-pourquoi {
+    flex: 1; /* Le texte prend tout l'espace restant */
+}
+
+.texte-pourquoi h2 {
+    font-family: 'Poppins', sans-serif; /* Même police que pour les départements */
+    color: #32620e; /* Vert de la bannière */
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.texte-pourquoi p {
+    font-family: 'Poppins', sans-serif;
+    color: #cca300; /* Doré utilisé dans vos boutons de navigation */
+    font-size: 1.25rem;
+    line-height: 1.6;
+    font-weight: 500;
+    text-align: justify;
+}
+
+/* =========================================
+   ADAPTATION MOBILE & TABLETTE (MEDIA QUERIES)
+   ========================================= */
+
+@media (max-width: 850px) {
+    
+    /* --- 1. EN-TÊTE ET NAVIGATION --- */
+    .navigation {
+        flex-direction: column; /* Place le menu en dessous du logo */
+        padding: 10px;
+    }
+
+    .bloc-logo-titre {
+        margin-bottom: 15px; /* Espace entre le titre et le menu */
+    }
+
+    .logo-image img {
+        height: 60px;
+    }
+    
+    .typo h1 {
+        font-size: 2.5rem;
+    }
+
+    .texte-titre p {
+        font-size: 0.9rem;
+    }
+
+    .liste-menu {
+        width: 100%;
+        justify-content: center;
+        gap: 5px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 5px; 
+    }
+
+    .bouton-nav {
+        font-size: 0.8rem;
+        padding: 8px 12px;
+    }
+
+    /* --- 2. TEXTE DE LA BANNIÈRE (RÉDUCTION MOBILE) --- */
+    .banner-content {
+        padding: 0.5rem 1rem 0.5rem 0.5rem;
+    }
+
+    .title-name {
+        font-size: clamp(1.8rem, 5vw, 3.2rem); /* Taille réduite */
+    }
+
+    .title-job {
+        font-size: clamp(1.1rem, 3.2vw, 2.2rem); /* Taille réduite */
+        margin-bottom: 0.4rem;
+    }
+
+    .locations {
+        font-size: clamp(0.55rem, 1.8vw, 0.85rem); /* Taille réduite */
+        letter-spacing: 0px;
+    }
+
+    /* --- 3. SECTION POURQUOI CONSULTER (ORDRE : TITRE -> PHOTO -> TEXTE) --- */
+    .section-pourquoi {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .container-pourquoi {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    
+    /* Permet aux éléments enfants du bloc texte de se réordonner directement dans le conteneur */
+    .texte-pourquoi {
+        display: contents;
+    }
+
+    /* 1er : Le Titre */
+    .texte-pourquoi h2 {
+        order: 1;
+        font-size: 1.5rem;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    /* 2ème : La Photo */
+    .image-pourquoi {
+        order: 2;
+        width: 80%;
+        max-width: 350px;
+    }
+
+    /* 3ème : Le Paragraphe */
+    .texte-pourquoi p {
+        order: 3;
+        font-size: 1rem;
+        text-align: center;
+    }
+}
