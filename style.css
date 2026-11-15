@@ -25,6 +25,14 @@ body {
   font-family: 'poppins', Arial, sans-serif;
   background-color: #fdfaf1;
   color: #333333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  background-color: #ffffff; /* mets #ffffff si tu veux du blanc pur */
 }
 
 /* =========================================
@@ -216,7 +224,48 @@ body {
 }
 
 /* =========================================
-   4. SECTION POURQUOI CONSULTER
+   4. BOUTONS D'ACTION DU SITE
+   ========================================= */
+.bouton-principal,
+.bouton-secondaire {
+  display: inline-block;
+  font-family: 'poppins', Arial, sans-serif;
+  font-size: clamp(0.85rem, 1.1vw, 1rem);
+  font-weight: 500;
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.bouton-principal {
+  background-color: #32620e;
+  color: #ffffff;
+  border: 2px solid #32620e;
+}
+
+.bouton-principal:hover {
+  background-color: #cca300;
+  border-color: #cca300;
+  transform: translateY(-2px);
+}
+
+.bouton-secondaire {
+  background-color: transparent;
+  color: #32620e;
+  border: 2px solid #32620e;
+}
+
+.bouton-secondaire:hover {
+  background-color: #32620e;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   5. SECTION POURQUOI CONSULTER
    ========================================= */
 .section-presentation {
   background-color: #fdfaf1;
@@ -263,6 +312,12 @@ body {
   line-height: 1.6;
   font-weight: 500;
   text-align: justify;
+  margin-bottom: 1.8rem;
+}
+
+.action-presentation {
+  display: flex;
+  justify-content: flex-start;
 }
 
 @media (max-width: 850px) {
@@ -289,11 +344,107 @@ body {
   .description-presentation {
     order: 3;
     text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  .action-presentation {
+    order: 4;
+    justify-content: center;
+    width: 100%;
   }
 }
 
 /* =========================================
-   5. PIED DE PAGE (FOOTER) - FORCÉ SUR 4 COLONNES
+   6. SECTION MES PRESTATIONS
+   ========================================= */
+.section-prestations {
+  background-color: #fcf8e8;
+  padding: 4rem 2rem;
+  border-top: 1px solid rgba(204, 163, 0, 0.25);
+}
+
+.conteneur-prestations {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.titre-prestations {
+  font-family: 'poppins', sans-serif;
+  color: #32620e;
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  margin-bottom: 2.5rem;
+}
+
+.grille-prestations {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.8rem;
+  margin-bottom: 2.5rem;
+}
+
+.carte-prestation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-prestation {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(50, 98, 14, 0.12);
+  border: 2px solid rgba(204, 163, 0, 0.4);
+  margin-bottom: 1rem;
+  background-color: #fdfaf1;
+}
+
+.image-prestation img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.carte-prestation:hover .image-prestation img {
+  transform: scale(1.05);
+}
+
+.nom-prestation {
+  font-family: 'poppins', sans-serif;
+  color: #32620e;
+  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.actions-prestations {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.8rem; /* même écart que la grille au-dessus */
+  flex-wrap: wrap;
+}
+
+.actions-prestations .bouton-principal,
+.actions-prestations .bouton-secondaire {
+  width: 230px; /* largeur identique pour centrer l'espace au milieu */
+  padding: 12px 16px;
+}
+
+@media (max-width: 850px) {
+  .section-prestations {
+    padding: 3rem 1.2rem;
+  }
+  .grille-prestations {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+}
+
+/* =========================================
+   7. PIED DE PAGE (FOOTER) - 2 COL + 1 COL + 1 COL
    ========================================= */
 .pied-de-page {
   background-color: #fcf8e8;
@@ -307,37 +458,36 @@ body {
   margin: 0 auto;
   padding: 0 clamp(0.5rem, 2vw, 1.5rem) clamp(1.5rem, 4vw, 2.5rem) clamp(0.5rem, 2vw, 1.5rem);
   display: grid;
-  /* Maintient TOUJOURS 4 colonnes, même sur téléphone */
+  /* Grille de 4 colonnes où la 1ère colonne en occupe 2 */
   grid-template-columns: repeat(4, 1fr);
-  /* L'espacement diminue quand l'écran se réduit */
-  gap: clamp(5px, 1.5vw, 2rem);
+  gap: clamp(8px, 2vw, 2rem);
 }
 
-/* Espacement forcé après la 1ère colonne */
+/* Betty Debenest + description prend 2 colonnes */
 .colonne-marque {
-  padding-right: clamp(0px, 2vw, 2.5rem); 
+  grid-column: span 2;
+  padding-right: clamp(0.5rem, 3vw, 3rem); 
 }
 
-/* Tailles de police fluides pour tout faire rentrer */
 .titre-marque-footer {
   font-family: 'tangerine', cursive, sans-serif;
-  font-size: clamp(1.2rem, 3.5vw, 2.5rem);
+  font-size: clamp(1.4rem, 3.5vw, 2.5rem);
   color: #367300;
   line-height: 1;
   margin-bottom: 0.5rem;
-  white-space: nowrap; /* Évite de couper le nom */
+  white-space: nowrap;
 }
 
 .description-footer {
-  font-size: clamp(0.45rem, 1.1vw, 0.9rem);
+  font-size: clamp(0.55rem, 1.1vw, 0.9rem);
   color: #555555;
-  line-height: 1.4;
+  line-height: 1.5;
   word-break: break-word;
 }
 
 .colonne-pied-de-page h4 {
   color: #32620e;
-  font-size: clamp(0.6rem, 1.4vw, 1.1rem);
+  font-size: clamp(0.65rem, 1.4vw, 1.1rem);
   margin-bottom: clamp(0.4rem, 1vw, 1rem);
   position: relative;
 }
@@ -352,28 +502,13 @@ body {
   border-radius: 2px;
 }
 
-.liens-footer,
 .contacts-footer {
   list-style: none;
 }
 
-.liens-footer li,
 .contacts-footer li {
   margin-bottom: clamp(0.2rem, 0.8vw, 0.6rem);
-  font-size: clamp(0.45rem, 1.1vw, 0.9rem); /* Taille fluide pour les liens */
-}
-
-.liens-footer a {
-  color: #4a4a4a;
-  text-decoration: none;
-  transition: color 0.2s ease, transform 0.2s ease;
-  display: inline-block;
-  word-break: break-word; /* Autorise le retour à la ligne si vraiment trop long */
-}
-
-.liens-footer a:hover {
-  color: #32620e;
-  transform: translateX(3px);
+  font-size: clamp(0.5rem, 1.1vw, 0.9rem);
 }
 
 .reseaux-sociaux-footer {
@@ -385,7 +520,7 @@ body {
 .reseaux-sociaux-footer a {
   color: #4a4a4a;
   text-decoration: none;
-  font-size: clamp(0.45rem, 1.1vw, 0.9rem); /* Taille fluide pour les RS */
+  font-size: clamp(0.5rem, 1.1vw, 0.9rem);
   transition: color 0.2s ease, transform 0.2s ease;
   display: flex;
   align-items: center;
@@ -397,19 +532,18 @@ body {
   transform: translateX(3px);
 }
 
-/* Rétrécissement des icônes SVG */
 .reseaux-sociaux-footer a svg {
-  width: clamp(10px, 1.8vw, 20px);
-  height: clamp(10px, 1.8vw, 20px);
+  width: clamp(12px, 1.8vw, 20px);
+  height: clamp(12px, 1.8vw, 20px);
   transition: fill 0.2s ease;
-  flex-shrink: 0; /* Empêche le logo de s'écraser */
+  flex-shrink: 0;
 }
 
 .bas-pied-de-page {
   border-top: 1px solid rgba(50, 98, 14, 0.15);
   background-color: #f5eed3;
   padding: clamp(0.5rem, 1.5vw, 1rem) 0;
-  font-size: clamp(0.5rem, 1vw, 0.85rem); /* Rendu fluide pour le copyright */
+  font-size: clamp(0.5rem, 1vw, 0.85rem);
   color: #666666;
 }
 
