@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil - Betty Debenest Ostéopathe Animalier</title>
+    <link rel="preload" href="fonts/Tangerine_Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="fonts/Poppins-Black.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,7 +13,7 @@
     <!-- EN-TÊTE FIXE DU SITE -->
     <header class="en-tete-fixe">
         <nav class="navigation-principale">
-            <div class="bloc-marque">
+            <a href="index.html" class="bloc-marque">
                 <div class="conteneur-logo">
                     <img src="img/logo.png" alt="Logo Betty Debenest" class="image-logo">
                 </div>
@@ -19,92 +21,179 @@
                     <h1 class="nom-praticienne">Betty Debenest</h1>
                     <p class="specialite-praticienne">Ostéopathe pour animaux</p>
                 </div>
-            </div>
+            </a>
 
             <ul class="menu-navigation">
-                <li><a href="index.html" class="lien-navigation active">Accueil</a></li>
-                <li><a href="consultations.html" class="lien-navigation">Consultations</a></li>
-                <li><a href="tarifs.html" class="lien-navigation">Tarifs</a></li>
-                <li><a href="quisuisje.html" class="lien-navigation">Qui suis-je ?</a></li>
-                <li><a href="prendrerdv.html" class="lien-navigation">Prendre RDV</a></li>
+                <li class="item-navigation">
+                    <a href="index.html" class="lien-navigation active">Accueil</a>
+                </li>
+                <li class="item-navigation item-deroulant">
+                    <a href="tarifs.html" class="lien-navigation">Tarifs</a>
+                    <ul class="sous-menu">
+                        <li><a href="tarifs.html#equins">Équins</a></li>
+                        <li><a href="tarifs.html#chiens">Chiens</a></li>
+                        <li><a href="tarifs.html#felins">Félins</a></li>
+                        <li><a href="tarifs.html#nacs">NACs</a></li>
+                        <li><a href="tarifs.html#bovins">Bovins</a></li>
+                        <li><a href="tarifs.html#ovins-caprins">Ovins/Caprins</a></li>
+                    </ul>
+                </li>
+                <li class="item-navigation item-deroulant">
+                    <a href="consultations.html" class="lien-navigation">Consultations</a>
+                    <ul class="sous-menu">
+                        <li><a href="consultations.html#osteopathie-animale">L'ostéopathie animale</a></li>
+                        <li><a href="consultations.html#deroulement">Déroulement d'une séance</a></li>
+                        <li><a href="consultations.html#au-prealable">Au préalable</a></li>
+                        <li><a href="consultations.html#quand-consulter">Quand consulter ?</a></li>
+                    </ul>
+                </li>
+                <li class="item-navigation">
+                    <a href="quisuisje.html" class="lien-navigation">Qui suis je ?</a>
+                </li>
+                <li class="item-navigation">
+                    <a href="prendrerdv.html" class="lien-navigation">Prendre RDV</a>
+                </li>
             </ul>
         </nav>
     </header>
 
     <!-- CONTENU PRINCIPAL -->
     <main>
-        <!-- BANNIÈRE D'ACCUEIL -->
+        <!-- 1. BANNIÈRE D'ACCUEIL -->
         <section class="banniere-accueil">
             <div class="banniere-image">
                 <img src="img/bannière.png" alt="Betty Debenest en consultation">
             </div>
             <div class="banniere-courbe"></div>
             <div class="banniere-contenu">
-                <h1 class="banniere-titre-nom">Betty Debenest</h1>
-                <h2 class="banniere-titre-metier">Ostéopathe pour animaux</h2>
-                <p class="banniere-zones">CHER (18), ALLIER (03), INDRE (36)</p>
+                <h2 class="banniere-titre-nom">Betty Debenest</h2>
+                <h3 class="banniere-titre-metier">Ostéopathe pour animaux</h3>
+                <p class="banniere-zones">CHER (18), INDRE (36), ALLIER (03)</p>
+                <p class="banniere-rna">
+                    Inscrite au Registre National d'Aptitude<br>
+                    sous le numéro OA 1769
+                </p>
             </div>
         </section>
 
-        <!-- SECTION PRESENTATION / POURQUOI CONSULTER -->
+        <!-- 2. SECTION PRÉSENTATION -->
         <section class="section-presentation">
             <div class="conteneur-presentation">
-                <div class="image-presentation">
-                    <img src="img/pourquoi_consulter.png" alt="Ostéopathe au travail avec un veau">
+                <div class="image-presentation-ronde">
+                    <img src="img/presentation.png" alt="Betty Debenest avec un animal">
                 </div>
-                <div class="texte-presentation">
-                    <h2 class="titre-presentation">Pourquoi consulter un ostéopathe ?</h2>
-                    <p class="description-presentation">
-                        Ostéopathe pour animaux depuis 2028. Sed nec lectus ut est lacinia sodales non elementum justo. 
-                        Praesent pretium euismod eros, sed lacinia justo mollis in. Nullam eget lacinia nisi, a mollis nisl. 
-                        Sed non congue diam. Duis porttitor, mi at tincidunt iaculis, purus mi tempus quam, quis.
-                    </p>
-                    <div class="action-presentation">
-                        <a href="prendrerdv.html" class="bouton-principal">Prendre RDV</a>
+
+                <div class="bloc-texte-presentation">
+                    <h2 class="titre-section-vert">Présentation</h2>
+                    <div class="encadre-vert-presentation">
+                        <p>
+                            Je suis Betty DEBENEST, ostéopathe pour animaux reconnue par le <strong>Conseil National de l’Ordre Vétérinaire.</strong>
+                        </p>
+                        <p>
+                            J’interviens à domicile et en ferme dans les départements du <strong>Cher (18)</strong>, de l’<strong>Indre (36)</strong>, et de l’<strong>Allier (03)</strong>.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION MES PRESTATIONS -->
+        <!-- 3. SECTION QUAND CONSULTER ? -->
+        <section class="section-quand-consulter">
+            <div class="conteneur-quand-consulter">
+                <h2 class="titre-section-vert">Quand consulter?</h2>
+
+                <div class="grille-motifs">
+                    <!-- Colonne gauche -->
+                    <div class="colonne-motifs">
+                        <div class="pilule-motif">
+                            <span class="icone-soleil">&#10035;</span>
+                            <span>Animaux sportifs</span>
+                        </div>
+                        <div class="pilule-motif">
+                            <span class="icone-soleil">&#10035;</span>
+                            <span>Suivi post-chirurgical</span>
+                        </div>
+                        <div class="pilule-motif">
+                            <span class="icone-soleil">&#10035;</span>
+                            <span>Perte de performances</span>
+                        </div>
+                        <div class="pilule-motif">
+                            <span class="icone-soleil">&#10035;</span>
+                            <span>Animaux de travail</span>
+                        </div>
+                        <div class="pilule-motif">
+                            <span class="icone-soleil">&#10035;</span>
+                            <span>Séance après chute/coup</span>
+                        </div>
+                    </div>
+
+                    <!-- Séparateur central -->
+                    <div class="separateur-vertical-or"></div>
+
+                    <!-- Colonne droite -->
+                    <div class="colonne-motifs">
+                        <div class="pilule-motif">
+                            <span class="icone-soleil">&#10035;</span>
+                            <span>Suivi de reproduction</span>
+                        </div>
+                        <div class="pilule-motif">
+                            <span class="icone-soleil">&#10035;</span>
+                            <span>Troubles digestifs</span>
+                        </div>
+                        <div class="pilule-motif">
+                            <span class="icone-soleil">&#10035;</span>
+                            <span>Suivi de croissance</span>
+                        </div>
+                        <div class="pilule-motif">
+                            <span class="icone-soleil">&#10035;</span>
+                            <span>Rétention de méconium</span>
+                        </div>
+                        <div class="pilule-motif">
+                            <span class="icone-soleil">&#10035;</span>
+                            <span>Animaux âgés</span>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="phrase-accroche-consulter">L’ostéopathie améliore la qualité de vie de vos animaux.</p>
+                <a href="prendrerdv.html" class="bouton-rdv-pilule">Prendre RDV</a>
+            </div>
+        </section>
+
+        <!-- 4. SECTION MES PRESTATIONS (LIENS VERS TARIFS) -->
         <section class="section-prestations">
-            <div class="conteneur-prestations">
-                <h2 class="titre-prestations">Mes Prestations</h2>
-                
-                <div class="grille-prestations">
-                    <div class="carte-prestation">
-                        <div class="image-prestation">
-                            <img src="img/equins.jpg" alt="Ostéopathie pour équins">
-                        </div>
-                        <p class="nom-prestation">EQUINS</p>
-                    </div>
+            <h2 class="titre-section-vert">Mes prestations</h2>
 
-                    <div class="carte-prestation">
-                        <div class="image-prestation">
-                            <img src="img/canins.jpg" alt="Ostéopathie pour canins">
-                        </div>
-                        <p class="nom-prestation">CANINS</p>
-                    </div>
+            <div class="grille-prestations-6">
+                <a href="tarifs.html#felins" class="carte-prestation-lien">
+                    <img src="img/felins.png" alt="Ostéopathie pour félins">
+                    <span class="etiquette-prestation">Félins</span>
+                </a>
 
-                    <div class="carte-prestation">
-                        <div class="image-prestation">
-                            <img src="img/felins.jpg" alt="Ostéopathie pour félins">
-                        </div>
-                        <p class="nom-prestation">FELINS</p>
-                    </div>
+                <a href="tarifs.html#equins" class="carte-prestation-lien">
+                    <img src="img/equins.png" alt="Ostéopathie pour équins">
+                    <span class="etiquette-prestation">Equins</span>
+                </a>
 
-                    <div class="carte-prestation">
-                        <div class="image-prestation">
-                            <img src="img/bovins.jpg" alt="Ostéopathie pour bovins et NAC">
-                        </div>
-                        <p class="nom-prestation">BOVINS &amp; NAC</p>
-                    </div>
-                </div>
+                <a href="tarifs.html#bovins" class="carte-prestation-lien">
+                    <img src="img/bovins.png" alt="Ostéopathie pour bovins">
+                    <span class="etiquette-prestation">Bovins</span>
+                </a>
 
-                <div class="actions-prestations">
-                    <a href="prendrerdv.html" class="bouton-principal">Prendre rendez-vous</a>
-                    <a href="consultations.html" class="bouton-secondaire">Découvrir plus</a>
-                </div>
+                <a href="tarifs.html#ovins-caprins" class="carte-prestation-lien">
+                    <img src="img/ovins-caprins.png" alt="Ostéopathie pour caprins et ovins">
+                    <span class="etiquette-prestation">Caprins/ Ovins</span>
+                </a>
+
+                <a href="tarifs.html#chiens" class="carte-prestation-lien">
+                    <img src="img/canins.png" alt="Ostéopathie pour canins">
+                    <span class="etiquette-prestation">Canins</span>
+                </a>
+
+                <a href="tarifs.html#nacs" class="carte-prestation-lien">
+                    <img src="img/NACs.png" alt="Ostéopathie pour NACs">
+                    <span class="etiquette-prestation">NACs</span>
+                </a>
             </div>
         </section>
     </main>
@@ -112,8 +201,6 @@
     <!-- PIED DE PAGE DU SITE -->
     <footer class="pied-de-page">
         <div class="conteneur-pied-de-page">
-            
-            <!-- Colonnes 1 & 2 fusionnées -->
             <div class="colonne-pied-de-page colonne-marque">
                 <h3 class="titre-marque-footer">Betty Debenest</h3>
                 <p class="description-footer">
@@ -121,7 +208,6 @@
                 </p>
             </div>
 
-            <!-- Colonne 3 -->
             <div class="colonne-pied-de-page">
                 <h4>Contact</h4>
                 <ul class="contacts-footer">
@@ -131,7 +217,6 @@
                 </ul>
             </div>
 
-            <!-- Colonne 4 -->
             <div class="colonne-pied-de-page">
                 <h4>Suivez-moi</h4>
                 <div class="reseaux-sociaux-footer">
@@ -145,7 +230,6 @@
                     </a>
                 </div>
             </div>
-
         </div>
 
         <div class="bas-pied-de-page">
@@ -154,6 +238,5 @@
             </div>
         </div>
     </footer>
-    
 </body>
 </html>
